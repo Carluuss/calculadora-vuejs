@@ -16,11 +16,11 @@ function calcular() {
       return parseFloat(numero1) + parseFloat(numero2);
 
     case '-':
-      return numero1 - numero2;
+      return parseFloat(numero1) - parseFloat(numero2);
     case '/':
-      return  numero1 || numero2 !== 0? numero1 / numero2 : ':(';
+      return  numero1 || numero2 !== 0? parseFloat(numero1) / parseFloat(numero2): ':(';
     case 'x':
-      return numero1 * numero2;
+      return parseFloat(numero1) * parseFloat(numero2);;
     default:
     return 'Error'
   }
@@ -37,7 +37,7 @@ function calcular() {
           class="form-control" type="number" placeholder="Digite um número" >
       </div>
       <div class="col-1">
-        <select class="form-control" >
+        <select class="form-control" v-model="estado.filtro">
           <option value="+">+</option>
           <option value="-">-</option>
           <option value="/">/</option>
